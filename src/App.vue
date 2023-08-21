@@ -1,11 +1,10 @@
 <script setup lang="ts">
-
+import SidebarContainer from './components/Sidebar/SidebarContainer.vue';
 </script>
 
 <template>
   <div>
-
-
+    <SidebarContainer />
   </div>
 </template>
 
