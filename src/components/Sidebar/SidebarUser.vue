@@ -11,10 +11,10 @@
                 props.item.username
             }}
             </h1>
-            <h2 class="text-sm font-light truncate text-white ml-3">{{
+            <h1 class="text-sm font-light truncate text-white ml-3">{{
                 props.item.email
             }}
-            </h2>
+            </h1>
         </div>
 
 

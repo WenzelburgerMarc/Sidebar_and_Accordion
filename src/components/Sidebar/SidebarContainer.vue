@@ -19,7 +19,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
-let isOpen = ref(false);
+let isOpen = ref(true);
 
 
 import SidebarItem from './SidebarItem.vue';
@@ -74,13 +74,32 @@ const logoItem: SidebarItemType = {
 
 const userItem: SidebarUserItem = {
     username: 'John Doe',
-    email: 'test@maidssffererl.de',
+    email: 'test@mail.de',
     actionEvent: () => goToProfile(),
 };
 
 function toggleSidebar(): void {
+
+    animateLabels(isOpen.value);
+
     isOpen.value = !isOpen.value;
+
 }
+async function animateLabels(reverse: boolean): Promise<void> {
+    const labels = document.querySelectorAll('.sidebar-item h1');
+    const headingElements = Array.from(labels) as HTMLHeadingElement[];
+    if (reverse) {
+        headingElements.reverse();
+    }
+    let delay = 0;
+
+    for (const label of headingElements) {
+        await new Promise(resolve => setTimeout(resolve, delay * 25));
+        label.classList.toggle('hide');
+        delay += 0.5;
+    }
+}
+
 
 function goToDashboard(): void {
     console.log('go to dashboard');
@@ -95,8 +114,13 @@ function goToProfile(): void {
 
 </script>
 <style scoped>
-.icon,
+.icon {
+
+    transition: all 0.15s ease-in-out;
+}
+
 .sidebar {
-    transition: all 0.25s ease-in-out;
+
+    transition: all 0.45s ease-in-out;
 }
 </style>

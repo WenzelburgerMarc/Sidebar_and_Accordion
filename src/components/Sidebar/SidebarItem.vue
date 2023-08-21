@@ -56,4 +56,9 @@ h1,
     opacity: 1;
     visibility: visible;
 }
+
+.sidebar-item h1.hide {
+    opacity: 0;
+    transform: translateX(-10px);
+}
 </style>
