@@ -8,7 +8,7 @@
 
 
         <h1 :class="props.item.isLogoItem ? 'font-semibold' : 'font-light'"
-            class="text-base text-white truncate ml-3 mr-auto">{{
+            class="text-base hide text-white truncate ml-3 mr-auto">{{
                 props.item.label
             }}
         </h1>

@@ -7,11 +7,11 @@
                 @error="showDefaultAvatar = true" alt="avatar">
         </div>
         <div class="flex flex-col w-full overflow-hidden">
-            <h1 class="text-sm font-bold text-white truncate ml-3">{{
+            <h1 class="text-sm hide font-bold text-white truncate ml-3">{{
                 props.item.username
             }}
             </h1>
-            <h1 class="text-sm font-light truncate text-white ml-3">{{
+            <h1 class="text-sm hide font-light truncate text-white ml-3">{{
                 props.item.email
             }}
             </h1>

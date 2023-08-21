@@ -1,11 +1,11 @@
 <template>
-    <div class="sidebar w-auto fixed top-0 left-0 bg-blue-600 h-screen" :class="isOpen ? 'w-[224px]' : 'w-[70px]'">
+    <div class="sidebar w-auto fixed top-0 left-0 bg-blue-600 h-screen z-50" :class="isOpen ? 'w-[224px]' : 'w-[70px]'">
 
-        <div class="relative flex flex-col items-start justify-start h-full">
+        <div class="sidebar-content relative flex flex-col items-start justify-start h-full">
 
             <sidebar-toggler :isOpen="isOpen" v-on:toggleSidebar="toggleSidebar()" class="absolute left-full m-3" />
 
-            <sidebar-item :item="logoItem" :isOpen="isOpen" class="mx-auto my-3 w-11/12" />
+            <sidebar-item :item="logoItem" :isOpen="isOpen" class="z-50 mx-auto my-3 w-11/12" />
             <sidebar-divider />
             <SidebarItem v-for="item in arrSidebarItemsTop" :item="item" :isOpen="isOpen" class="mx-auto mt-3 w-11/12" />
             <sidebar-divider class="mt-auto" />
@@ -15,11 +15,14 @@
         </div>
 
 
+
     </div>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
-let isOpen = ref(true);
+const emit = defineEmits();
+
+let isOpen = ref(false);
 
 
 import SidebarItem from './SidebarItem.vue';
@@ -83,6 +86,9 @@ function toggleSidebar(): void {
     animateLabels(isOpen.value);
 
     isOpen.value = !isOpen.value;
+
+
+    emit('toggleSiteProtection');
 
 }
 async function animateLabels(reverse: boolean): Promise<void> {
