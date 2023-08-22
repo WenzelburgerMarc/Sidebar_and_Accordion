@@ -1,2 +1,2 @@
 # Sidebar_and_Accordion
-![]([https://gifyu.com/image/Sg3fZ.gif)
+![](https://s11.gifyu.com/images/Sg3fZ.gif)
