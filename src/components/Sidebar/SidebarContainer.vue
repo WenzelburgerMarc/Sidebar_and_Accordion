@@ -1,5 +1,6 @@
 <template>
-    <div class="sidebar w-auto fixed top-0 left-0 bg-blue-600 h-screen z-50" :class="isOpen ? 'w-[224px]' : 'w-[70px]'">
+    <div class="sidebar w-auto fixed top-0 left-0 bg-blue-600 h-screen z-50"
+        :class="isOpen ? 'sidebarOpen' : 'sidebarClosed'">
 
         <div class="sidebar-content relative flex flex-col items-start justify-start h-full">
 
@@ -87,7 +88,6 @@ function toggleSidebar(): void {
 
     isOpen.value = !isOpen.value;
 
-
     emit('toggleSiteProtection');
 
 }
@@ -95,7 +95,7 @@ async function animateLabels(reverse: boolean): Promise<void> {
     const labels = document.querySelectorAll('.sidebar-item h1');
     const headingElements = Array.from(labels) as HTMLHeadingElement[];
 
-    
+
     if (reverse) {
         headingElements.reverse();
     }
@@ -128,7 +128,14 @@ function goToProfile(): void {
 }
 
 .sidebar {
-
     transition: all 0.45s ease-in-out;
+}
+
+.sidebarOpen {
+    width: 224px !important;
+}
+
+.sidebarClosed {
+    width: 70px !important;
 }
 </style>
