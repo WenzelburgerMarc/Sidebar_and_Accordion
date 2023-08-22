@@ -8,8 +8,8 @@ import TheAccordion from './components/Accordion/TheAccordion.vue';
   <div>
     <TheSidebar />
 
-    <div
-      class="main-content-container ml-[70px] max-w-[calc(100vw-70px)] min-h-screen flex justify-center items-center p-5">
+    <div class="main-content-container  w-[calc(100vw-70px)] min-h-screen flex justify-center items-center p-5">
+
       <the-accordion />
     </div>
 
@@ -19,12 +19,13 @@ import TheAccordion from './components/Accordion/TheAccordion.vue';
 <style scoped>
 .main-content-container {
   overflow-x: hidden;
-  max-width: calc(100vw - 224px);
+  margin-left: 70px;
   transition: all 0.45s ease-in-out;
 }
 
 .translate-blur {
   margin-left: inherit;
+
   transform: translateX(224px) scale(0.8);
   filter: blur(5px);
 }

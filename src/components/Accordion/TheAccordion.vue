@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-auto h-auto">
         <accordion-container v-for="item in arrAccordionItems" :title="item.title" :content="item.content" class="my-3" />
 
     </div>
