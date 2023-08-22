@@ -55,4 +55,10 @@ h1,
 .sidebar-item {
     transition: all 0.25s ease-in-out;
 }
+
+
+.sidebar-item h1.hide {
+    opacity: 0;
+    transform: translateX(-10px);
+}
 </style>

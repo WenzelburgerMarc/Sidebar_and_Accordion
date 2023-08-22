@@ -94,6 +94,8 @@ function toggleSidebar(): void {
 async function animateLabels(reverse: boolean): Promise<void> {
     const labels = document.querySelectorAll('.sidebar-item h1');
     const headingElements = Array.from(labels) as HTMLHeadingElement[];
+
+    
     if (reverse) {
         headingElements.reverse();
     }

@@ -19,4 +19,8 @@ watch(() => props.isOpen, () => {
     isOpenWatcher.value = props.isOpen;
 });
 </script>
-<style scoped></style>
+<style scoped>
+.icon {
+    transition: all 0.25s ease-in-out;
+}
+</style>
