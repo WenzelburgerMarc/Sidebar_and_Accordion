@@ -20,6 +20,7 @@ watch(() => showSiteProtectionScreen.value, () => {
     <div>
         <SidebarContainer class="z-50" v-on:toggleSiteProtection="showSiteProtectionScreen = !showSiteProtectionScreen" />
 
+
         <SiteProtectionScreen class="z-40 "
             :class="showSiteProtectionScreen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'" />
 
